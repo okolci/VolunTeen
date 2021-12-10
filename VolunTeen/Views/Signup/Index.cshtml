@@ -1,0 +1,48 @@
+﻿@model IEnumerable<VolunTeen.Models.LoginModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_First.cshtml";
+}
+
+
+<table class="table">
+   
+    @*<tr>
+            <th>Opportunity Detail</th>
+
+        </tr>
+        <tr>
+            <th></th>
+        </tr>*@
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <h2>
+                    Opportunity Title
+                </h2>
+                <hr />
+            </td>
+        </tr>
+        <tr>
+            <th>Opportunity Detail</th>
+
+        </tr>
+        <tr>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpportunityDetail)
+            </td>
+
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Sign Up", "AddProfile", "VolProfile", null, new { @class = "btn btn-info" })</td>
+        </tr>
+    }
+
+</table>
+<hr />
